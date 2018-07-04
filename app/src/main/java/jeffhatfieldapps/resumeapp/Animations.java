@@ -31,6 +31,13 @@ public class Animations {
 
     public static final int TOUCH_DELAY = 50;
 
+    public static ObjectAnimator fadeAnimation(View view, float percent, int animDuration, int delay){
+        ObjectAnimator fadeOutAnim = ObjectAnimator.ofFloat(view, "alpha", percent);
+        fadeOutAnim.setDuration(animDuration);
+        fadeOutAnim.setStartDelay(delay);
+        return fadeOutAnim;
+    }
+
     public static void ImageViewAnimatedChange(Context c, final ImageView v, final Drawable new_image) {
         final Animation anim_out = AnimationUtils.loadAnimation(c, android.R.anim.fade_out);
         final Animation anim_in  = AnimationUtils.loadAnimation(c, android.R.anim.fade_in);
@@ -82,26 +89,13 @@ public class Animations {
     }
 
     public static ObjectAnimator fadeInAnimation(View view, int animDuration, int delay) {
-        return fadeInAnimation(view, 1, animDuration, delay);
-    }
-
-    public static ObjectAnimator fadeInAnimation(View view, float percent, int animDuration, int delay){
-        ObjectAnimator fadeOutAnim = ObjectAnimator.ofFloat(view, "alpha", percent);
-        fadeOutAnim.setDuration(animDuration);
-        fadeOutAnim.setStartDelay(delay);
-        return fadeOutAnim;
+        return fadeAnimation(view, 1, animDuration, delay);
     }
 
     public static ObjectAnimator fadeOutAnimation(View view, int animDuration, int delay) {
-        return fadeOutAnimation(view, 0, animDuration, delay);
+        return fadeAnimation(view, 0, animDuration, delay);
     }
 
-    public static ObjectAnimator fadeOutAnimation(View view, float percent, int animDuration, int delay) {
-        ObjectAnimator fadeOutAnim = ObjectAnimator.ofFloat(view, "alpha", percent);
-        fadeOutAnim.setDuration(animDuration);
-        fadeOutAnim.setStartDelay(delay);
-        return fadeOutAnim;
-    }
 
     public static AnimatorSet crossFadeAnimation(View viewIn, View viewOut, int animDuration, int delay){
         ObjectAnimator fadeIn = fadeInAnimation(viewIn, animDuration, delay);
@@ -395,7 +389,7 @@ public class Animations {
     }
 
     public static AnimatorSet turnCoverOn(View coverView, TextView coverTextView, int animDuration, int delay){
-        ObjectAnimator coverAlphaAnim = fadeInAnimation(coverView, 0.75f, animDuration, delay);
+        ObjectAnimator coverAlphaAnim = fadeAnimation(coverView, 0.75f, animDuration, delay);
         ObjectAnimator coverTextAlphaAnim = fadeInAnimation(coverTextView, animDuration, delay);
 
         AnimatorSet coverAnimatorSet = new AnimatorSet();

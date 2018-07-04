@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ResumeApp</string>
+
+    <string name="transition_splash_main_photo">MainPhoto</string>
 </resources>

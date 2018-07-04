@@ -9,13 +9,20 @@
         android:roundIcon="@drawable/fossil_photo_app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.fossil.wearables.myfaces.mk" />
     </application>
 
 </manifest>

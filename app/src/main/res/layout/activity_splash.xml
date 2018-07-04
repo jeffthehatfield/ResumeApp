@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColorPrimary"
+    tools:context="jeffhatfieldapps.resumeapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/carbon_fiber_radial"
+        android:scaleType="fitXY"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/fossil_photo"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/backgroundColorPrimary"
+        android:transitionName="@string/transition_splash_main_photo"
+        />
+
+    <TextView
+        android:id="@+id/top_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/main_activity_text_padding"
+        android:text="Welcome to\n my resume"
+        android:textSize="@dimen/main_activity_text_size"
+        android:fontFamily="@font/gotham"
+        android:textColor="@color/textColorSecondary"
+        />
+
+    <TextView
+        android:id="@+id/bottom_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/main_activity_text_padding"
+        android:text="Jeff Hatfield"
+        android:textSize="@dimen/main_activity_text_size"
+        android:fontFamily="@font/gotham"
+        android:textColor="@color/textColorSecondary"
+        />
+
+</FrameLayout>
